@@ -114,11 +114,11 @@ body {
 }
 
 .logo a {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 500;
     color: var(--primary-color);
     text-decoration: none;
-    margin-left: 12px;
+    margin-left: 10px;
 }
 
 .logo img {
