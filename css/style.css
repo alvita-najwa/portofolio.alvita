@@ -115,10 +115,15 @@ body {
 
 .logo a {
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--primary-color);
     text-decoration: none;
     margin-left: 10px;
+}
+
+.logo a span {
+    color: #2563eb; 
+    font-weight: 600; 
 }
 
 .logo img {
