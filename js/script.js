@@ -11,11 +11,6 @@ const certificateItems = document.querySelectorAll('.certificate-item');
 const contactForm = document.getElementById('contactForm');
 const darkModeToggle = document.createElement('button');
 
-// Create Dark Mode Toggle Button
-darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-darkModeToggle.classList.add('dark-mode-toggle');
-document.body.appendChild(darkModeToggle);
-
 // Mobile Navigation Toggle
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
@@ -33,18 +28,24 @@ navLinks.forEach(link => {
 // Smooth Scrolling
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
         const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        
-        if (targetSection) {
-            window.scrollTo({
-                top: targetSection.offsetTop - 70,
-                behavior: 'smooth'
-            });
+
+        // Hanya intercept kalau link internal (#something)
+        if (targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
         }
+        // Kalau href = about.html / contact.html biarkan default (redirect jalan)
     });
 });
+
 
 // Active Section Indicator
 window.addEventListener('scroll', () => {
@@ -67,22 +68,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Back to Top Button
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        backToTopBtn.classList.add('show');
-    } else {
-        backToTopBtn.classList.remove('show');
-    }
-});
-
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
 // Skill Bar Animation
 const animateSkillBars = () => {
     skillBars.forEach(bar => {
@@ -92,19 +77,26 @@ const animateSkillBars = () => {
 };
 
 // Trigger skill bar animation when skills section is in view
-const skillsSection = document.getElementById('skills');
-const skillsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateSkillBars();
-            skillsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
+document.addEventListener("DOMContentLoaded", () => {
+  const skills = document.querySelectorAll('.skill-progress');
 
-if (skillsSection) {
-    skillsObserver.observe(skillsSection);
-}
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const progress = entry.target;
+        const value = progress.getAttribute('data-progress');
+        progress.style.width = value;  // langsung pakai value, sudah ada '%'
+
+        observer.unobserve(progress);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  skills.forEach(skill => {
+    observer.observe(skill);
+  });
+});
+
 
 // Project Filtering
 filterBtns.forEach(btn => {
@@ -198,36 +190,6 @@ contactForm.addEventListener('submit', (e) => {
     contactForm.reset();
 });
 
-// Dark Mode Toggle
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    document.body.classList.add('dark-mode-transition');
-    
-    // Update button icon
-    if (document.body.classList.contains('dark-mode')) {
-        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    }
-    
-    // Save preference to localStorage
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-});
-
-// Check for saved dark mode preference
-const savedDarkMode = localStorage.getItem('darkMode');
-if (savedDarkMode === 'true') {
-    document.body.classList.add('dark-mode');
-    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-}
-
-// Remove transition class after initial load to prevent animation on page load
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        document.body.classList.remove('dark-mode-transition');
-    }, 100);
-});
-
 // Initialize AOS (Animate On Scroll) - if library is included
 if (typeof AOS !== 'undefined') {
     AOS.init({
@@ -236,41 +198,6 @@ if (typeof AOS !== 'undefined') {
     });
 }
 
-// Add Dark Mode Toggle Styles
-const darkModeStyles = `
-    .dark-mode-toggle {
-        position: fixed;
-        top: 20px;
-        right: 80px;
-        width: 50px;
-        height: 50px;
-        background: var(--primary-color);
-        color: var(--white-color);
-        border: none;
-        border-radius: 50%;
-        font-size: 1.2rem;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: var(--transition);
-        z-index: 999;
-    }
-    
-    .dark-mode-toggle:hover {
-        background: var(--secondary-color);
-        transform: translateY(-3px);
-    }
-    
-    @media (max-width: 768px) {
-        .dark-mode-toggle {
-            right: 80px;
-            top: 80px;
-        }
-    }
-`;
-
-// Add styles to the page
-const styleSheet = document.createElement('style');
-styleSheet.innerText = darkModeStyles;
-document.head.appendChild(styleSheet);
+window.onerror = function(message, source, lineno, colno, error) {
+    console.log("Error caught: ", message);
+};

@@ -25,6 +25,9 @@ body {
     color: var(--dark-color);
     background-color: var(--light-color);
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
@@ -105,11 +108,24 @@ body {
     margin: 0 auto;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
 .logo a {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
+    margin-left: 12px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .nav-menu {
@@ -225,6 +241,7 @@ body {
 /* About Section */
 .about {
     padding: 5rem 0;
+    margin-top: 40px;
 }
 
 .about-content {
@@ -259,37 +276,11 @@ body {
     color: var(--dark-color);
 }
 
-.timeline {
-    margin-top: 2rem;
-}
-
-.timeline-item {
-    position: relative;
-    padding-left: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--primary-color);
-}
-
-.timeline-item h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--secondary-color);
-}
-
 /* Skills Section */
 .skills {
     padding: 5rem 0;
     background-color: #f1f5f9;
+    margin-top: 40px;
 }
 
 .skills-content {
@@ -358,6 +349,7 @@ body {
 /* Projects Section */
 .projects {
     padding: 5rem 0;
+    margin-top: 40px;
 }
 
 .project-filter {
@@ -441,6 +433,7 @@ body {
 .certificates {
     padding: 5rem 0;
     background-color: #f1f5f9;
+    margin-top: 40px;
 }
 
 .certificate-filter {
@@ -495,6 +488,7 @@ body {
 /* Contact Section */
 .contact {
     padding: 5rem 0;
+    margin-top: 40px;
 }
 
 .contact-content {
@@ -584,6 +578,7 @@ body {
     background: var(--dark-color);
     color: var(--white-color);
     padding: 2rem 0;
+    margin-top: auto;
 }
 
 .footer-content {
@@ -629,35 +624,6 @@ body {
 .footer-info p {
     font-size: 0.9rem;
     color: var(--gray-color);
-}
-
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background: var(--primary-color);
-    color: var(--white-color);
-    border: none;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    z-index: 999;
-}
-
-.back-to-top:hover {
-    background: var(--secondary-color);
-    transform: translateY(-3px);
-}
-
-.back-to-top.show {
-    display: flex;
 }
 
 /* Modal */
