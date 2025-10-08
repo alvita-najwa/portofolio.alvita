@@ -267,6 +267,49 @@ body {
     box-shadow: var(--shadow);
 }
 
+/* Kotak 3 foto di samping */
+.side-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.side-photos img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    border: 2px solid #e63946; /* ganti warna sesuai tema kamu */
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.side-photos img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsif di layar kecil */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        flex-direction: column;
+    }
+
+    .side-photos {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .side-photos img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
 .about-text {
     flex: 1;
 }
