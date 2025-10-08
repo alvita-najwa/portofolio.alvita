@@ -268,7 +268,13 @@ body {
     width: 100%;
     max-width: 400px;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    box-shadow: 0 0 25px 5px rgba(150, 0, 255, 0.6); /* Glow ungu */
+    transition: all 0.3s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px 10px rgba(150, 0, 255, 0.8);
 }
 
 /* Kotak 3 foto di samping */
