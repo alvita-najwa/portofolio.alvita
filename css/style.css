@@ -96,8 +96,8 @@ body {
     left: 0;
     width: 100%;
     background: var(--white-color);
-    box-shadow: var(--shadow2);
-    filter: drop-shadow var(--shadow2);
+    box-shadow: var(--shadow);
+    filter: drop-shadow var(--shadow);
     transition: all 0.2s ease;
     z-index: 1000;
 }
