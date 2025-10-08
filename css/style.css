@@ -268,14 +268,15 @@ body {
     width: 100%;
     max-width: 400px;
     border-radius: var(--border-radius);
-    box-shadow: 0 0 25px rgba(0, 102, 255, 0.6); /* Cahaya biru */
-    filter: drop-shadow(0 0 20px rgba(0, 102, 255, 0.8)); /* Efek neon */
+    box-shadow: 0 0 15px rgba(0, 140, 255, 0.8); /* Biru terang */
+    filter: drop-shadow(0 0 15px rgba(0, 140, 255, 0.9)); /* Efek glow biru */
     transition: all 0.3s ease;
 }
 
 .about-img img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 35px 10px rgba(150, 0, 255, 0.8);
+    box-shadow: 0 0 40px rgba(0, 153, 255, 1);
+    filter: drop-shadow(0 0 35px rgba(0, 153, 255, 1));
 }
 
 /* Kotak 3 foto di samping */
