@@ -275,12 +275,12 @@ body {
 .side-photos {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .side-photos img {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: var(--border-radius);
     border: 2px solid #e63946; /* ganti warna sesuai tema kamu */
