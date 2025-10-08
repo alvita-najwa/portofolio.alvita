@@ -88,31 +88,6 @@ body {
     color: var(--white-color);
 }
 
-.button-primary {
-  background-color: #1a73e8; /* biru solid */
-  color: white;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.button-outline {
-  background-color: transparent;
-  color: #1a73e8;
-  border: 2px solid #1a73e8;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.button-group {
-  display: flex;
-  gap: 16px;
-}
-
 
 /* Navigation */
 .navbar {
