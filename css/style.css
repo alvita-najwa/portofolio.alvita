@@ -88,6 +88,25 @@ body {
     color: var(--white-color);
 }
 
+.hero-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* biar di tengah halaman */
+    gap: 20px; /* jarak antar tombol */
+    margin-top: 20px;
+}
+
+.hero-btns a:first-child {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.hero-btns a:first-child:hover {
+    color: var(--secondary-color);
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
