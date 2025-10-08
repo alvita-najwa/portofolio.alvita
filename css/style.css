@@ -88,46 +88,29 @@ body {
     color: var(--white-color);
 }
 
-.hero-btns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-top: 25px;
+.button-primary {
+  background-color: #1a73e8; /* biru solid */
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-/* Download CV → punya kotak biru (outline) */
-.hero-btns a:first-child {
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    background: transparent;
-    padding: 12px 28px;
-    border-radius: var(--border-radius);
-    font-weight: 500;
-    text-decoration: none;
-    transition: var(--transition);
+.button-outline {
+  background-color: transparent;
+  color: #1a73e8;
+  border: 2px solid #1a73e8;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.hero-btns a:first-child:hover {
-    background: var(--primary-color);
-    color: var(--white-color);
-    transform: translateY(-3px);
-}
-
-/* Contact Me → hanya teks biru biasa */
-.hero-btns .btn {
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-weight: 500;
-    text-decoration: underline;
-    padding: 12px 28px;
-    transition: var(--transition);
-}
-
-.hero-btns .btn:hover {
-    color: var(--secondary-color);
-    transform: translateY(-3px);
+.button-group {
+  display: flex;
+  gap: 16px;
 }
 
 
