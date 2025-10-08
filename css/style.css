@@ -14,7 +14,7 @@
     --gray-color: #94a3b8;
     --white-color: #ffffff;
     --transition: all 0.3s ease;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow: 0 6px 8px rgba(0, 7, 255, 0.8);
     --border-radius: 8px;
 }
 
@@ -268,15 +268,15 @@ body {
     width: 100%;
     max-width: 400px;
     border-radius: var(--border-radius);
-    box-shadow: 0 0 15px rgba(0, 140, 255, 0.8); /* Biru terang */
-    filter: drop-shadow(0 0 15px rgba(0, 140, 255, 0.9)); /* Efek glow biru */
+    box-shadow: var(--shadow);
+    filter: drop-shadow var(--shadow:); /* Efek glow biru */
     transition: all 0.3s ease;
 }
 
 .about-img img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(0, 153, 255, 1);
-    filter: drop-shadow(0 0 35px rgba(0, 153, 255, 1));
+    box-shadow: var(--shadow);
+    filter: drop-shadow var(--shadow);
 }
 
 /* Kotak 3 foto di samping */
