@@ -270,6 +270,7 @@ body {
     border-radius: var(--border-radius);
     box-shadow: 0 0 25px 5px rgba(150, 0, 255, 0.6); /* Glow ungu */
     transition: all 0.3s ease;
+    filter: drop-shadow(0 0 20px rgba(150, 0, 255, 0.8));
 }
 
 .about-img img:hover {
