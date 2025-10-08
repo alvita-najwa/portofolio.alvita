@@ -88,16 +88,15 @@ body {
     color: var(--white-color);
 }
 
-/* === Hero Buttons Section === */
 .hero-btns {
     display: flex;
-    justify-content: center;   /* sejajarkan horizontal */
-    align-items: center;       /* sejajarkan vertikal */
-    gap: 25px;                 /* jarak antar tombol */
-    margin-top: 25px;          /* jarak dari teks di atas */
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 25px;
 }
 
-/* Tombol Download CV (Outline) */
+/* Download CV → punya kotak biru (outline) */
 .hero-btns a:first-child {
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
@@ -115,21 +114,20 @@ body {
     transform: translateY(-3px);
 }
 
-/* Tombol Contact Me (Solid) */
+/* Contact Me → hanya teks biru biasa */
 .hero-btns .btn {
-    background: var(--primary-color);
-    color: var(--white-color);
-    padding: 12px 28px;
+    background: none;
     border: none;
-    border-radius: var(--border-radius);
+    color: var(--primary-color);
     font-weight: 500;
+    text-decoration: underline;
+    padding: 12px 28px;
     transition: var(--transition);
 }
 
 .hero-btns .btn:hover {
-    background: var(--secondary-color);
+    color: var(--secondary-color);
     transform: translateY(-3px);
-    box-shadow: var(--shadow);
 }
 
 
