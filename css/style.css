@@ -293,7 +293,7 @@ body {
     height: 140px;
     object-fit: cover;
     border-radius: var(--border-radius);
-    border: 2px solid #e63946; /* ganti warna sesuai tema kamu */
+    border: 2px solid #1d3557; /* ganti warna sesuai tema kamu */
     box-shadow: var(--shadow);
     transition: transform 0.3s ease;
 }
