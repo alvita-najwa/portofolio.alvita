@@ -90,22 +90,43 @@ body {
 
 .hero-btns {
     display: flex;
-    align-items: center;
-    justify-content: center; /* biar di tengah halaman */
-    gap: 20px; /* jarak antar tombol */
+    align-items: center;       /* sejajarkan secara vertikal */
+    justify-content: center;   /* posisikan di tengah secara horizontal */
+    gap: 20px;                 /* jarak antar elemen */
     margin-top: 20px;
 }
 
+.hero-btns a {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Link Download CV */
 .hero-btns a:first-child {
     color: var(--primary-color);
     text-decoration: underline;
-    font-weight: 500;
     transition: var(--transition);
 }
 
 .hero-btns a:first-child:hover {
     color: var(--secondary-color);
 }
+
+/* Tombol Contact Me */
+.hero-btns .btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+    border-radius: var(--border-radius);
+    padding: 12px 28px;
+    transition: var(--transition);
+}
+
+.hero-btns .btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
 
 /* Navigation */
 .navbar {
