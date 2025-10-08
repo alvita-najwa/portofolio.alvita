@@ -268,9 +268,9 @@ body {
     width: 100%;
     max-width: 400px;
     border-radius: var(--border-radius);
-    box-shadow: 0 0 25px 5px rgba(150, 0, 255, 0.6); /* Glow ungu */
+    box-shadow: 0 0 25px rgba(0, 102, 255, 0.6); /* Cahaya biru */
+    filter: drop-shadow(0 0 20px rgba(0, 102, 255, 0.8)); /* Efek neon */
     transition: all 0.3s ease;
-    filter: drop-shadow(0 0 20px rgba(150, 0, 255, 0.8));
 }
 
 .about-img img:hover {
