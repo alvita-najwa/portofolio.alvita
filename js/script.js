@@ -203,20 +203,21 @@ window.onerror = function(message, source, lineno, colno, error) {
 };
 
 
-<script>
-  const toggleButton = document.getElementById('theme-toggle');
-  const body = document.body;
+// Ambil elemen tombol & body
+const toggleButton = document.getElementById('theme-toggle');
+const body = document.body;
 
-  // Simpan preferensi user
-  if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-    toggleButton.textContent = '☀️';
-  }
+// Cek preferensi mode sebelumnya (disimpan di localStorage)
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark-mode');
+  toggleButton.textContent = '☀️';
+}
 
-  toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const isDark = body.classList.contains('dark-mode');
-    toggleButton.textContent = isDark ? '☀️' : '🌙';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-</script>
+// Event klik untuk ganti mode
+toggleButton.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  const isDark = body.classList.contains('dark-mode');
+  toggleButton.textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
