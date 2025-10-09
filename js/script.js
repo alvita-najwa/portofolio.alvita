@@ -201,3 +201,22 @@ if (typeof AOS !== 'undefined') {
 window.onerror = function(message, source, lineno, colno, error) {
     console.log("Error caught: ", message);
 };
+
+
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Simpan preferensi user
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    toggleButton.textContent = '☀️';
+  }
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    toggleButton.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
