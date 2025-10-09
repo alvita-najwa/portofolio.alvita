@@ -179,7 +179,6 @@ contactForm.addEventListener('submit', (e) => {
     // Get form values
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
     
     // In a real application, you would send this data to a server
@@ -189,6 +188,27 @@ contactForm.addEventListener('submit', (e) => {
     // Reset form
     contactForm.reset();
 });
+
+// Tambahkan di script.js
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (response.ok) {
+    alert("✅ Pesan berhasil dikirim!");
+    form.reset();
+  } else {
+    alert("❌ Gagal mengirim pesan. Coba lagi ya.");
+  }
+});
+
 
 // Initialize AOS (Animate On Scroll) - if library is included
 if (typeof AOS !== 'undefined') {
