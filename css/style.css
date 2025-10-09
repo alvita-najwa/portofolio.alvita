@@ -796,3 +796,9 @@ body.dark-mode .nav-link:hover {
   color: var(--accent);
 }
 
+/* Transisi halus saat ubah tema */
+body, .navbar, .section, footer {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
