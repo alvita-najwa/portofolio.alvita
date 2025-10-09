@@ -189,25 +189,26 @@ contactForm.addEventListener('submit', (e) => {
     contactForm.reset();
 });
 
-// Tambahkan di script.js
-const form = document.getElementById('contactForm');
+const form = document.getElementById('contact-form');
+  const msg = document.getElementById('form-message');
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const data = new FormData(form);
-  const response = await fetch(form.action, {
-    method: form.method,
-    body: data,
-    headers: { 'Accept': 'application/json' }
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // biar gak pindah halaman
+    const data = new FormData(form);
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      msg.style.display = 'block'; // tampilkan pesan sukses
+      form.reset(); // kosongkan form
+    } else {
+      msg.style.display = 'block';
+      msg.style.color = 'red';
+      msg.textContent = 'Oops! Something went wrong.';
+    }
   });
-
-  if (response.ok) {
-    alert("✅ Pesan berhasil dikirim!");
-    form.reset();
-  } else {
-    alert("❌ Gagal mengirim pesan. Coba lagi ya.");
-  }
-});
 
 
 // Initialize AOS (Animate On Scroll) - if library is included
@@ -221,23 +222,4 @@ if (typeof AOS !== 'undefined') {
 window.onerror = function(message, source, lineno, colno, error) {
     console.log("Error caught: ", message);
 };
-
-
-// Ambil elemen tombol & body
-const toggleButton = document.getElementById('theme-toggle');
-const body = document.body;
-
-// Cek preferensi mode sebelumnya (disimpan di localStorage)
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark-mode');
-  toggleButton.textContent = '☀️';
-}
-
-// Event klik untuk ganti mode
-toggleButton.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-  const isDark = body.classList.contains('dark-mode');
-  toggleButton.textContent = isDark ? '☀️' : '🌙';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-});
 
