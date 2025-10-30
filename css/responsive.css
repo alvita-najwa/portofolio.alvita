@@ -312,25 +312,3 @@
         font-size: 0.85rem;
     }
 }
-
-/* === FIX: Hamburger menu klik tidak berfungsi di HP === */
-.nav-menu {
-  position: fixed;
-  z-index: 1000; /* pastikan menu di atas hero atau elemen lain */
-}
-
-.nav-toggle {
-  position: relative;
-  z-index: 1100; /* tombol hamburger tetap di atas menu */
-}
-
-.navbar,
-.nav-container {
-  position: relative;
-  z-index: 999; /* navbar berada di lapisan atas */
-}
-
-.hero {
-  position: relative;
-  z-index: 1; /* hero tidak menimpa navbar */
-}
