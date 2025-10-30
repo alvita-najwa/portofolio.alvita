@@ -248,79 +248,68 @@
     }
 }
 
-/* Dark Mode */
-.dark-mode {
-    --dark-color: #f8fafc;
-    --light-color: #1e293b;
-    --gray-color: #cbd5e1;
-    --white-color: #334155;
-    --primary-color: #3b82f6;
-    --secondary-color: #60a5fa;
-    background-color: var(--light-color);
-    color: var(--dark-color);
+/* Responsive — Certificate Section */
+
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+    .certificate-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .certificate-item img {
+        height: 180px;
+    }
+
+    .certificate-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .certificate-info p {
+        font-size: 0.85rem;
+    }
 }
 
-.dark-mode .navbar,
-.dark-mode .project-card,
-.dark-mode .certificate-item,
-.dark-mode .skill-category,
-.dark-mode .modal-content {
-    background-color: #334155;
-    color: var(--dark-color);
+/* Mobile Landscape & Small Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .certificate-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.2rem;
+    }
+
+    .certificate-item img {
+        height: 160px;
+    }
+
+    .certificate-info {
+        padding: 1.2rem;
+    }
+
+    .certificate-info h3 {
+        font-size: 1rem;
+    }
 }
 
-.dark-mode .nav-link,
-.dark-mode .about-text p,
-.dark-mode .contact-info p,
-.dark-mode .contact-item h4,
-.dark-mode .project-info h3,
-.dark-mode .certificate-info h3,
-.dark-mode .project-info p,
-.dark-mode .certificate-info p {
-    color: var(--dark-color);
-}
+/* Mobile Portrait (max-width: 576px) */
+@media (max-width: 576px) {
+    .certificate-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 
-.dark-mode .contact-form input,
-.dark-mode .contact-form textarea {
-    background-color: #475569;
-    border-color: #64748b;
-    color: var(--dark-color);
-}
+    .certificate-item img {
+        height: auto;
+    }
 
-.dark-mode .back-to-top,
-.dark-mode .btn {
-    background-color: var(--primary-color);
-}
+    .certificate-info {
+        padding: 1rem;
+    }
 
-.dark-mode .btn:hover {
-    background-color: var(--secondary-color);
-}
+    .certificate-info h3 {
+        font-size: 1rem;
+    }
 
-.dark-mode .btn-outline {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    background: transparent;
-}
-
-.dark-mode .btn-outline:hover {
-    background-color: var(--primary-color);
-    color: #334155;
-}
-
-.dark-mode .skill-bar {
-    background: #475569;
-}
-
-.dark-mode .footer {
-    background-color: #0f172a;
-}
-
-.dark-mode .social-links a,
-.dark-mode .footer-social a {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Animation for dark mode toggle */
-.dark-mode-transition * {
-    transition: background-color 0.3s ease, color 0.3s ease;
+    .certificate-info p {
+        font-size: 0.85rem;
+    }
 }
